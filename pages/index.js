@@ -24,8 +24,8 @@ export default function Home() {
       </Head>
 
       <main className="flex relative w-screen h-screen justify-center">
-        <div className="flex flex-col justify-center w-1/2">
-          <div className="flex flex-col justify-center items-center mx-auto">
+        <div className="flex flex-col justify-center w-1/2 space-y-4">
+          <div className="flex flex-col justify-center items-center mx-auto space-y-2">
             <img src="/profile.jpg"
                  className="rounded-full w-32 h-32 dark:opacity-75 shadow-xl"
             />
@@ -33,7 +33,7 @@ export default function Home() {
               Ewa Warzyńska smartDesign
             </h1>
           </div>
-          <ul className="flex justify-center items-center text-6xl mt-4 pt-4 border-t border-gold-800 space-x-8">
+          <ul className="flex justify-center items-center text-6xl pt-4 border-t border-gold-800 space-x-8">
             { socials.map(social =>
               <li key={social.id}>
                 <a href={social.url} alt={social.description}>
