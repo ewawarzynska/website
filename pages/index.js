@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
+  faSquarePhone,
 } from "@fortawesome/free-solid-svg-icons";
 
 const socials = [
@@ -23,27 +24,44 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex relative w-screen h-screen justify-center">
-        <div className="flex flex-col justify-center w-1/2 space-y-4">
-          <div className="flex flex-col justify-center items-center mx-auto space-y-2">
-            <img src="/profile.jpg"
-                 className="rounded-full w-32 h-32 dark:opacity-75 shadow-xl"
-            />
-            <h1 className="text-2xl font-bold text-center">
-              Ewa Warzyńska smartDesign
-            </h1>
+      <div className="grow flex flex-col w-screen h-screen">
+        <main className="flex relative w-screen h-screen justify-center">
+          <div className="flex flex-col justify-center w-1/2 space-y-4">
+            <div className="flex flex-col justify-center items-center mx-auto space-y-2">
+              <img src="/profile.jpg"
+                   className="rounded-full w-32 h-32 dark:opacity-75 shadow-xl"
+              />
+              <h1 className="text-2xl font-bold text-center">
+                Ewa Warzyńska smartDesign
+              </h1>
+            </div>
+            <ul className="flex justify-center items-center text-6xl pt-4 border-t border-gold-800 space-x-8">
+              { socials.map(social =>
+                <li key={social.id} className="hover:text-gold-800">
+                  <a href={social.url} alt={social.description}>
+                    <FontAwesomeIcon icon={social.icon} />
+                  </a>
+                </li>
+              )}
+            </ul>
           </div>
-          <ul className="flex justify-center items-center text-6xl pt-4 border-t border-gold-800 space-x-8">
-            { socials.map(social =>
-              <li key={social.id}>
-                <a href={social.url} alt={social.description}>
-                  <FontAwesomeIcon icon={social.icon} />
-                </a>
-              </li>
-            )}
-          </ul>
-        </div>
-      </main>
+        </main>
+
+        <footer className="shrink-0 flex gap-4 h-24 w-full items-center justify-center border-t border-gold-900 text-gold-900">
+          <Image src="/logo.png" alt="smartDesign Logo" width={112} height={64} />
+          <div className="flex flex-col items-left justify-center text-[12px]">
+            <a href="https://goo.gl/maps/xKcPkXjb8P24rTzz8" target="_blank" className="flex flex-col items-left justify-center text-[12px]">
+              <p>Ewa Warzyńska smartDesign</p>
+              <p>Rubinowa 13a, 55-040 Tyniec Mały</p>
+              <p>NIP: 7542509844</p>
+            </a>
+            <a href="tel:+48609088189" className="flex gap-2 items-center">
+              <FontAwesomeIcon icon={faSquarePhone} />
+              <span>+48 609 088 189</span>
+            </a>
+          </div>
+        </footer>
+      </div>
     </div>
   )
 }
