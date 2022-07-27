@@ -15,7 +15,7 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      background: {900: "#151313"},
+      background: "#151313",
       gold: {100: "#a68f52", 800: "#8c7945", 900: "#524628"},
     },
     extend: {},

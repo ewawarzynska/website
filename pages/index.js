@@ -1,49 +1,43 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faInstagram,
+  faPinterest,
+} from "@fortawesome/free-brands-svg-icons";
+
+const socials = [
+  {id: "instagram", url: "https://www.instagram.com/interior_smartdesign", icon: faInstagram, description: "Realizacje i projekty"},
+  {id: "pinterest", url: "https://pl.pinterest.com/ewa_swiderska", icon: faPinterest, description: "Inspiracje"},
+]
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 text-gold-100 bg-background-900">
+    <div className="flex w-full min-h-screen flex-col items-center justify-center text-gold-100 bg-background">
       <Head>
         <title>Ewa Warzyńska smartDesign</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Ewa Warzyńska smartDesign
-        </h1>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://www.instagram.com/interior_smartdesign/"
-            className="mt-6 w-full md:w-64 rounded-xl border border-gold-900 p-6 text-left hover:text-gold-800 focus:text-gold-800"
-          >
-            <h3 className="text-2xl font-bold">Projekty &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-          </a>
-
-          <a
-            href="https://pl.pinterest.com/ewa_swiderska/"
-            className="mt-6 w-full md:w-64 rounded-xl border border-gold-900 p-6 text-left hover:text-gold-800 focus:text-gold-800"
-          >
-            <h3 className="text-2xl font-bold">Inspiracje &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-          </a>
-
-          <a
-            href="mailto://ewa@warzynska.pl"
-            className="mt-6 w-full md:w-64 rounded-xl border border-gold-900 p-6 text-left hover:text-gold-800 focus:text-gold-800"
-          >
-            <h3 className="text-2xl font-bold">Kontakt &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-          </a>
+      <main className="flex relative w-screen h-screen justify-center">
+        <div className="flex flex-col justify-center w-1/2">
+          <div className="flex flex-col justify-center items-center mx-auto">
+            <img src="/profile.jpg"
+                 className="rounded-full w-32 h-32 dark:opacity-75 shadow-xl"
+            />
+            <h1 className="text-xl font-bold text-center">
+              Ewa Warzyńska smartDesign
+            </h1>
+          </div>
+          <ul className="flex justify-center items-center text-6xl mt-4 pt-4 border-t border-gold-800 space-x-8">
+            { socials.map(social =>
+              <li key={social.id}>
+                <a href={social.url}>
+                  <FontAwesomeIcon icon={social.icon} />
+                </a>
+              </li>
+            )}
+          </ul>
         </div>
       </main>
     </div>
