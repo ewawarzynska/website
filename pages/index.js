@@ -50,7 +50,7 @@ export default function Home() {
         <footer className="shrink-0 flex gap-4 h-24 w-full items-center justify-center border-t border-gold-900 text-gold-900">
           <Image src="/logo.png" alt="smartDesign Logo" width={112} height={64} />
           <div className="flex flex-col items-left justify-center text-[12px]">
-            <a href="https://goo.gl/maps/xKcPkXjb8P24rTzz8" target="_blank" className="flex flex-col items-left justify-center text-[12px]">
+            <a href="https://goo.gl/maps/xKcPkXjb8P24rTzz8" target="_blank" rel="noopener noreferrer" className="flex flex-col items-left justify-center text-[12px]">
               <p>Ewa Warzyńska smartDesign</p>
               <p>Rubinowa 13a, 55-040 Tyniec Mały</p>
               <p>NIP: 7542509844</p>
