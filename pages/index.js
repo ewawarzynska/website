@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import profile from '../public/profile.jpg'
+import logo from '../public/logo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faInstagram,
@@ -28,8 +30,8 @@ export default function Home() {
         <main className="flex relative w-screen h-screen justify-center">
           <div className="flex flex-col justify-center w-1/2 space-y-4">
             <div className="flex flex-col justify-center items-center mx-auto space-y-2">
-              <img src="/profile.jpg"
-                   className="rounded-full w-32 h-32 dark:opacity-75 shadow-xl"
+              <Image src={profile} alt="Ewa Warzyńska"
+                className="rounded-full w-32 h-32 dark:opacity-75 shadow-xl"
               />
               <h1 className="text-2xl font-bold text-center">
                 Ewa Warzyńska smartDesign
@@ -48,7 +50,7 @@ export default function Home() {
         </main>
 
         <footer className="shrink-0 flex gap-4 h-24 w-full items-center justify-center border-t border-gold-900 text-gold-900">
-          <Image src="/logo.png" alt="smartDesign Logo" width={112} height={64} />
+          <Image src={logo} alt="smartDesign Logo" />
           <div className="flex flex-col items-left justify-center text-[12px]">
             <a href="https://goo.gl/maps/xKcPkXjb8P24rTzz8" target="_blank" rel="noopener noreferrer" className="flex flex-col items-left justify-center text-[12px]">
               <p>Ewa Warzyńska smartDesign</p>
